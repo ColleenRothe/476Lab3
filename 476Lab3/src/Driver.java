@@ -38,10 +38,8 @@ static File file;
             System.out.println(absoluteFilePath+" File Created");
         }else System.out.println("File "+absoluteFilePath+" already exists");
        
-        //Hide the file
-        Path path = Paths.get(absoluteFilePath);
-        Files.setAttribute(path, "dos:hidden", false);
-
+       
+      
         //To write to the file
         BufferedWriter writer = new BufferedWriter(new FileWriter(file));
         
@@ -57,6 +55,11 @@ static File file;
         }
         
         writer.close();
+        
+         //Hide the file
+        Path path = Paths.get(absoluteFilePath);
+        Files.setAttribute(path, "dos:hidden", true);
+        
         System.out.println(calcPercentFree());
 
         //Message to the user
